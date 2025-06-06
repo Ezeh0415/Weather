@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Weather from "./componets/Weather";
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<Weather />} />
+      </Routes>
+      </BrowserRouter>
+      {/* 1871a95b9f874b78a7a183040250406 */}
+      {/* https://api.weatherapi.com/v1/current.xml?key=1871a95b9f874b78a7a183040250406&q=anambra&aqi=no */}
     </div>
   );
-}
 
+}
 export default App;
