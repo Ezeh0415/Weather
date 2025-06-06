@@ -17,7 +17,7 @@ const Weather = () => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=54ce6cafa89cfcf417bc7968b63bb316&units=imperial`;
   const { data, main, weather, wind, clouds, loading, error } = UseFetch(url);
 
-  const { description, main: weatherMain, icon } = weather;
+  const { description, main: weatherMain, } = weather;
 
   const getWindDirection = (degrees) => {
     const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
@@ -39,20 +39,20 @@ const Weather = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white p-6">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white p-2">
+      <div className="w-full">
         <header className="text-center mb-8 flex items-center justify-between">
-          <h1 className="text-3xl font-bold">Weather Dashboard</h1>
+          <h1 className="text-sm md:text-3xl font-bold">Weather Dashboard</h1>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="flex items-center gap-3"
+            className="flex items-center gap-2"
           >
             <input
               ref={inputRef}
               type="text"
               placeholder="Search city..."
               onKeyDown={handleKeyDown}
-              className="px-4 py-2 rounded-xl text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="px-2 py-1 rounded-xl text-black focus:outline-none mt-1"
             />
             <button
               type="button"
@@ -86,8 +86,8 @@ const Weather = () => {
             {/* Current Weather */}
             <section className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg">
               <div className="flex flex-col sm:flex-row items-center justify-between mb-6">
-                <div>
-                  <h2 className="text-2xl font-semibold mb-1">
+                <div className="text-center md:text-left">
+                  <h2 className="text-sm md:text-2xl font-semibold mb-1">
                     Current Weather
                   </h2>
                   <p className="text-lg opacity-80">{data.name}</p>
@@ -124,11 +124,11 @@ const Weather = () => {
 
             {/* Weather Details */}
             <section className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg">
-              <h2 className="text-2xl font-semibold mb-6">Weather Details</h2>
+              <h2 className=" text-lg md:text-2xl font-semibold mb-6">Weather Details</h2>
 
               <div className="grid grid-cols-2 gap-4">
                 <WeatherDetail
-                  icon={<FaWind className="mr-2" />}
+                  icon={<FaWind className="mr-2 text-xs" />}
                   label="Wind"
                   value={
                     wind
@@ -177,7 +177,7 @@ const WeatherDetail = ({ icon, label, value }) => (
       {icon}
       <span>{label}</span>
     </div>
-    <div className="text-xl font-bold">{value}</div>
+    <div className=" text-sm md:text-xl font-bold">{value}</div>
   </div>
 );
 
