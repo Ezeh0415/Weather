@@ -4,7 +4,7 @@ import Weather from "./componets/Weather";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App  md:w-[98%] md:ml-1">
       <BrowserRouter>
       <Routes>
           <Route path="/" element={<Weather />} />

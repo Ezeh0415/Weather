@@ -40,8 +40,8 @@ const Weather = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-900 to-purple-900 text-white p-2">
-      <div className="w-full">
-        <header className="text-center mb-8 flex items-center justify-between">
+      <div className="w-full md:mx-[2rem] md:p-2">
+        <header className="text-center mb-8 flex items-center justify-between md:w-[95%]">
           <h1 className="text-sm md:text-3xl font-bold">Weather Dashboard</h1>
           <form
             onSubmit={(e) => e.preventDefault()}
@@ -123,7 +123,7 @@ const Weather = () => {
             </section>
 
             {/* Weather Details */}
-            <section className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg">
+            <section className="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-lg md:w-[90%]">
               <h2 className=" text-lg md:text-2xl font-semibold mb-6">Weather Details</h2>
 
               <div className="grid grid-cols-2 gap-4">
